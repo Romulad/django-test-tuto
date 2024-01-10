@@ -39,5 +39,5 @@ class ContactForm(forms.Form):
     def clean_message(self):
         message = self.cleaned_data["message"]
         if len(message) < 3:
-            raise forms.ValidationError(_('Your message is too short'))
+            raise forms.ValidationError(_('Your message is too short'), code="Short")
         return message
